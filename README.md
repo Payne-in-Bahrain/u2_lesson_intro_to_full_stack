@@ -122,30 +122,51 @@ The following diagrams an HTTP Request and Response Message:
 <img src="https://i.imgur.com/kCuWuw7.png">
 
 Notice they both have a **Start Line** followed by **Headers**, an **Empty line**, and finally the **Body** of the message.
-	
-### The Status Code of the Response
 
-The [status code](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) in the first line of the response message informs us how the request/response went.
+### Components of an HTTP Request:
 
-It is always a three-digit number that falls within the following ranges/categories:
+1. **Request Line:**
+   - The first line of the request contains the HTTP method (e.g., GET, POST), the URL (Uniform Resource Locator) or URI (Uniform Resource Identifier) of the requested resource, and the HTTP version being used.
+   - Example: `GET /path/to/resource HTTP/1.1`
 
-- 1xx Informational
-- 2xx Success
-- 3xx Redirection
-- 4xx Client Error
-- 5xx Server Error
+2. **Headers:**
+   - Headers provide additional information about the request or the client making the request. They are key-value pairs separated by colons.
+   - Example:
+     ```
+     Host: www.example.com
+     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0
+     ```
 
-Most HTTP responses will have a status code of `200`, which means **OK**. You also might be familiar with the status code of `404` - **Not Found**.
+3. **Body (Optional):**
+   - The body of the request contains data sent by the client to the server, particularly in the case of POST, PUT, or other methods that allow sending data.
+   - Example (for a POST request with form data):
+     ```
+     username=johndoe&password=secretpassword
+     ```
 
-### The Body of the Message
+4. **Parameters (Query String):**
+   - For GET requests, parameters are often included in the URL as a query string. These parameters provide additional information to the server.
+   - Example: `?page=1&limit=10`
 
-The **Body** contains the data being sent to the server (if any) and the data being returned by the server
+5. **HTTP Method:**
+   - Specifies the type of request being made (e.g., GET, POST, PUT, DELETE). It defines the operation the client wants to perform on the resource.
+   - Example: `GET /path/to/resource HTTP/1.1`
 
-The **Content-Type** header is a [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) and helps the browser determine what to do with the data being sent in the **body** of the HTTP response. For example:
-- **text/html**: The browser will parse the **body** as HTML and, depending on how the HTTP request was initiated, usually **replace** the browser window's content with the newly received HTML.
-- **image/png**
+6. **Cookies:**
+   - Cookies can be included in the request headers. They are used to store state information on the client side.
+   - Example:
+     ```
+     Cookie: sessionid=abc123; user=JohnDoe
+     ```
 
-Although the HTTP protocol is text-based, the content in the body can be binary, for example, images are typically transferred in a binary format.
+7. **Authentication Information:**
+   - If the server requires authentication, the client may include information such as usernames and passwords.
+   - Example (using Basic Authentication):
+     ```
+     Authorization: Basic base64encoded(username:password)
+     ```
+
+These components together make up the structure of an HTTP request. It's important to note that not all components are present in every request; the presence of certain components depends on the type of request and the specific requirements of the server.
 
 ### Headers 
 
@@ -183,6 +204,20 @@ Think of it like receiving a package:
 
 - The Body is the actual content inside the package (the gift, book, or whatever you ordered).
 - The Content-Type header is the label on the package that tells you what's inside, so you know how to open and use it.
+	
+### The Status Code of the Response
+
+The [status code](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) in the first line of the response message informs us how the request/response went.
+
+It is always a three-digit number that falls within the following ranges/categories:
+
+- 1xx Informational
+- 2xx Success
+- 3xx Redirection
+- 4xx Client Error
+- 5xx Server Error
+
+Most HTTP responses will have a status code of `200`, which means **OK**. You also might be familiar with the status code of `404` - **Not Found**.
 
 ## 8. The Two Key Components of an HTTP Request 
 
