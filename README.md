@@ -147,6 +147,23 @@ The **Content-Type** header is a [MIME type](https://developer.mozilla.org/en-US
 
 Although the HTTP protocol is text-based, the content in the body can be binary, for example, images are typically transferred in a binary format.
 
+### Headers 
+
+## What Are Headers?
+HTTP headers are like special notes that travel with your web requests and responses, providing instructions on how to handle the data. Headers can be compared to the address and instructions on an envelope accompanying your letter, or to specific requests like "no onions" when ordering food at a restaurant.
+
+## Common Headers:
+1. **Content-Type:**
+   - Specifies the type of data being sent, like labeling a package with its contents.
+
+2. **CORS (Cross-Origin Resource Sharing):**
+   - Acts like permissions, allowing or denying access to resources from different places.
+
+3. **Cache-Control:**
+   - Guides browsers and servers on how long they can store and reuse content.
+
+Understanding headers ensures smooth communication between browsers and servers, much like making sure your letter or package reaches its destination correctly. As you dive into web development, you'll naturally become more familiar with these helpful instructions.
+
 Imagine a conversation between you and a server:
 
 - The **Body** is like the package you exchange:
