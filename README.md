@@ -149,10 +149,10 @@ Although the HTTP protocol is text-based, the content in the body can be binary,
 
 ### Headers 
 
-## What Are Headers?
+**What Are Headers?**
 HTTP headers are like special notes that travel with your web requests and responses, providing instructions on how to handle the data. Headers can be compared to the address and instructions on an envelope accompanying your letter, or to specific requests like "no onions" when ordering food at a restaurant.
 
-## Common Headers:
+_Common Headers:_
 1. **Content-Type:**
    - Specifies the type of data being sent, like labeling a package with its contents.
 
